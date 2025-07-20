@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark theme colors inspired by the reference */
+  --background: hsl(220, 25%, 14%);
+  --foreground: hsl(0, 0%, 95%);
+  --muted: hsl(220, 15%, 25%);
+  --muted-foreground: hsl(0, 0%, 70%);
+  --popover: hsl(220, 25%, 16%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --card: hsl(220, 25%, 16%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --border: hsl(220, 15%, 25%);
+  --input: hsl(220, 15%, 25%);
+  --primary: hsl(280, 100%, 70%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(190, 100%, 60%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(280, 100%, 70%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(280, 100%, 70%);
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+
+/* Custom gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #f97316 0%, #eab308 100%);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+}
+
+.gradient-pink {
+  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* File type colors */
+.file-video { background: linear-gradient(135deg, #f97316 0%, #eab308 100%); }
+.file-photo { background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); }
+.file-music { background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%); }
+.file-docs { background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%); }
+.file-default { background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%); }
